@@ -116,7 +116,7 @@ class App extends React.Component {
         <div className={styles.container}>
        
           <FormControlLabel label={darkMode ? <Moon className={styles.themeIcon}/> : <BrightnessIcon className={styles.themeIcon}/>} className={styles.switch} control={<Switch onClick={this.useDarkMode}/>} /> 
-          {/* <img className={styles.image} src={coronaImage} alt="covid-19" /> */}
+          
           <Title darkMode={darkMode} />
           <Cards data={data} darkMode={darkMode}/>
           <CountryPicker handleCountryChange={this.handleCountryChange} />
