@@ -8,6 +8,7 @@ import { Cards, Chart, CountryPicker } from "./componenets";
 import { fetchData } from "./api";
 import styles from "./App.module.css";
 import coronaImage from "./images/covid-main-image.png";
+import Title from './componenets/Title/Title';
 
 // MUI
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core";
@@ -49,7 +50,8 @@ const darkTheme = createMuiTheme({
       white: "#ffffff",
     },
     type: "dark",
-  },
+  }
+  
 });
 
 class App extends React.Component {
@@ -110,12 +112,13 @@ class App extends React.Component {
     console.log(data);
     return (
       <MuiThemeProvider theme={themeConfig}>
-        <Paper style={{minHeight:"100vh"}}>
+        <Paper style={{minHeight:"100vh"}} square>
         <div className={styles.container}>
        
           <FormControlLabel label={darkMode ? <Moon className={styles.themeIcon}/> : <BrightnessIcon className={styles.themeIcon}/>} className={styles.switch} control={<Switch onClick={this.useDarkMode}/>} /> 
-          <img className={styles.image} src={coronaImage} alt="covid-19" />
-          <Cards data={data} />
+          {/* <img className={styles.image} src={coronaImage} alt="covid-19" /> */}
+          <Title darkMode={darkMode} />
+          <Cards data={data} darkMode={darkMode}/>
           <CountryPicker handleCountryChange={this.handleCountryChange} />
           <Chart data={data} country={country} darkMode={darkMode} />
         </div>

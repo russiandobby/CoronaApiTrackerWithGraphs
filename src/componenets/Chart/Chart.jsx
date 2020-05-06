@@ -50,9 +50,9 @@ function Chart({data:{confirmed,deaths,recovered},country,darkMode}) {
                 display:true,
                 text:`Death Rate: ${globalDr}`,
                 fontSize:20,
-                fontColor:'red'
+                fontColor:darkTheme ? 'rgba(250,235,0,1)' : 'rgba(0, 0, 0, 1)'
             },
-            responsive:true,
+           
             legend:{
                 labels:{
                     fontColor:darkTheme ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)',
@@ -68,7 +68,7 @@ function Chart({data:{confirmed,deaths,recovered},country,darkMode}) {
                     },
                     ticks: {
                       fontColor: darkTheme ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)',
-                      fontSize:1 // this here
+                      // this here
                     }
                 }],
                 yAxes: [{
@@ -129,7 +129,40 @@ function Chart({data:{confirmed,deaths,recovered},country,darkMode}) {
             options={{
                 legend:{display:false},
                 fontSize:20,
-                title:{display:true, text:`Current state in ${country}, with Death Rate of ${globalDr}`}
+                title:{display:true,
+                        text:`Current state in ${country}, with Death Rate of ${globalDr}`,
+                        fontColor:darkTheme ? 'rgba(250,235,0,1)' : 'rgba(0, 0, 0, 1)',
+                        fontSize:20
+                        },
+                legend:{
+                labels:{
+                    fontColor:darkTheme ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)',
+                    fontSize:15,
+                    fontStyle:'bold'
+                }
+            },
+            scales:{
+                xAxes: [{
+                    gridLines: {
+                        color: darkTheme ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.1)' ,
+                        lineWidth: 1
+                    },
+                    ticks: {
+                      fontColor: darkTheme ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)',
+                       // this here
+                    }
+                }],
+                yAxes: [{
+                    gridLines: {
+                        color: darkTheme ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.1)',
+                        // lineWidth: 1
+                    },
+                    ticks: {
+                      fontColor: darkTheme ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)',
+                    //   fontSize:1 // this here
+                    }
+                }]
+            }
             }}
             />
         ) : (
