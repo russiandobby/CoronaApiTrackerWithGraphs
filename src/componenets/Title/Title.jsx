@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import coronaImage from "../../images/bacteria.png"; 
+import glowCorona from '../../images/bacteria-glow.png'
 import styles from  './Title.module.css';
 import cx from 'classnames';
 
@@ -18,7 +19,7 @@ function Title({darkMode}) {
     
     return (
         <div>
-           <span className={cx(styles.text, darkTheme ? styles.dark : null)}>C</span><span><img className={styles.image} src={coronaImage} alt="covid-19" /></span><span className={cx(styles.text, darkTheme ? styles.dark : null)}>VID-19</span>
+           <span className={cx(styles.text, darkTheme ? styles.dark : null)}>C</span><span><img className={styles.image} src={darkTheme ? glowCorona : coronaImage} alt="covid-19" /></span><span className={cx(styles.text, darkTheme ? styles.dark : null)}>VID-19</span>
         </div>
     )
 }
