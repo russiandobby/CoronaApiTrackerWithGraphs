@@ -1,3 +1,18 @@
+# Corona Stats Tracker :floppy_disk:
+<p align="center">
+  <img src="https://i.ibb.co/0YZKCWb/Isometric-Web-Pages-Mockup.jpg">
+</p>
+
+## Technologies
+
+<img src="https://icon-library.com/images/react-icon/react-icon-29.jpg" width="50" height="50" /> <img src="https://material-ui.com/static/logo.png" width="50" height="50" /> <img src="https://miro.medium.com/max/353/1*lJY86WV3-67GbEcvvMTpwQ.png" width="50" height="50" />
+
+
+REACT/MATERIALUI/REACT CHART JS/
+
+## Summary
+A Covid tracker that uses a public api to retrieve and display data. Material UI is used for styling.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
